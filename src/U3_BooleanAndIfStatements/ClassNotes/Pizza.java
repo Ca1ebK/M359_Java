@@ -23,6 +23,27 @@ public class Pizza {
         this.numToppings = 0;
     }
 
+    /*
+    toString method
+    This method is called AUTOMATICALLY when we print an object
+    reference. If we DON'T have the toString method created,
+    then Java will just print the address in memory where the
+    reference variable is saved.
+
+    Method header MUST BE as follows:
+    public String toString()
+     */
+
+    public String toString() {
+        String str = "";
+
+        // build up my String that describes a Pizza object
+        str += "Ordered a " + inches + "in pizza from " + store;
+        str += "\nIt has " + numToppings + " toppings";
+
+        return str;
+    }
+
     // equals method
     // store doesn't have to be the same
     // inches, numToppings, deepdish MUST be the same
