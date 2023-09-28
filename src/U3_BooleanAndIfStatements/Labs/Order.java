@@ -1,3 +1,7 @@
+// Caleb Kang
+// Mrs. Denna
+// Period 8
+
 package U3_BooleanAndIfStatements.Labs;
 
 public class Order {
@@ -5,8 +9,8 @@ public class Order {
     private String order;
     private String customerName;
     private boolean isDiscount;
-    private double discountPercent;
-    private double taxPercentRate;
+    private double discount;
+    private double tax;
     private double subtotal;
 
     private final double BURGER_COST = 10.99;
@@ -14,50 +18,43 @@ public class Order {
     private final double PASTA_COST = 8.99;
     private final double SALAD_COST = 6.99;
 
+
     // no discount
     public Order(String customer, double tax) {
-        customerName = customer;
-        taxPercentRate = tax;
-        discountPercent = 0;
-        isDiscount = false;
-        order = "";
+        this.customerName = customer;
+        this.tax = tax;
+        this.isDiscount = false;
+        this.discount = 0.0;
+        this.order = "";
     }
 
     public Order(String customer, double tax, double discount) {
-        customerName = customer;
-        taxPercentRate = tax;
-        isDiscount = true;
-        discountPercent = discount;
-        order = "";
+        this.customerName = customer;
+        this.tax = tax;
+        this.isDiscount = true;
+        this.discount = discount;
+        this.order = "";
     }
 
     public void addItem(String food, int quantity) {
 
         String foodItem = food.toLowerCase();
-        String burger = "burger".toLowerCase();
-        String pizza = "pizza".toLowerCase();
-        String pasta = "pasta".toLowerCase();
-        String salad = "salad".toLowerCase();
 
         if (quantity > 0) {
-            if (foodItem.equals(burger)) {
-                String output = "Ordered " + quantity + " Burger(s)";
-                order += output + "\n";
+            if (foodItem.equals("burger")) {
+                order +=  "Ordered " + quantity + " Burger(s)\n";
                 subtotal += quantity * BURGER_COST;
             }
-            else if (foodItem.equals(pasta)) {
-                String output = "Ordered " + quantity + " Pasta(s)";
-                order += output + "\n";
+            else if (foodItem.equals("pasta")) {
+                order += "Ordered " + quantity + " Pasta(s)\n";
                 subtotal += quantity * PASTA_COST;
             }
-            else if (foodItem.equals(salad)) {
-                String output = "Ordered " + quantity + " Salad(s)";
-                order += output + "\n";
+            else if (foodItem.equals("salad")) {
+                order += "Ordered " + quantity + " Salad(s)\n";
                 subtotal += quantity * SALAD_COST;
             }
-            else if (foodItem.equals(pizza)) {
-                String output = "Ordered " + quantity + " Pizza(s)";
-                order += output + "\n";
+            else if (foodItem.equals("pizza")) {
+                order += "Ordered " + quantity + " Pizza(s)\n";
                 subtotal += quantity * PIZZA_COST;
             }
             else {
@@ -70,24 +67,24 @@ public class Order {
     }
 
     public String toString() {
+
+        double amountSaved = subtotal * discount;
+        double amountAfterDiscount = subtotal - amountSaved;
+        double taxAmount = amountAfterDiscount * tax;
+        double totalAmount = amountAfterDiscount + taxAmount;
+
         String str = "";
-        double amountSaved = subtotal * discountPercent;
 
-        str += "------ " + customerName + " ------";
-        str += "\n";
-
-        str += order;
-
+        str += "------ Order for: " + customerName + " ------\n\n";
+        str += order + "\n";
         str += "Subtotal:\t\t$" + subtotal + "\n";
-
-        if (isDiscount == true) {
-            str += "\tDiscount:    " + (discountPercent * 100) + "%\n";
-            str += "\tYou saved:   $" + amountSaved + "\n";
+        if (isDiscount) {
+            str += "\tDiscount:\t" + (discount * 100) + "%\n";
+            str += "\tYou saved:\t$" + amountSaved + "\n\n";
         }
-
-        str += "Tax  (" + taxPercentRate + "%):    " + ((subtotal - amountSaved) * (taxPercentRate)) + "\n";
-        str += "Total:\t\t$" + ((subtotal - amountSaved) + ((subtotal - amountSaved) * (taxPercentRate)));
-
+        str += "Tax  (" + (tax * 100) + "%):\t$" + taxAmount + "\n";
+        str += "Total:\t\t\t$" + totalAmount;
+        str += "\n-----------------------------\n\n";
 
         return str;
     }
