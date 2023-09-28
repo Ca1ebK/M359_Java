@@ -1,6 +1,6 @@
 package U3_BooleanAndIfStatements.Labs;
 
-public class RestaurantOrder {
+public class Order {
 
     private String order;
     private String customerName;
@@ -15,17 +15,20 @@ public class RestaurantOrder {
     private final double SALAD_COST = 6.99;
 
     // no discount
-    public RestaurantOrder(String customer, double tax) {
+    public Order(String customer, double tax) {
         customerName = customer;
-        taxPercentRate = tax * 100;
+        taxPercentRate = tax;
+        discountPercent = 0;
         isDiscount = false;
+        order = "";
     }
 
-    public RestaurantOrder(String customer, double tax, double discount) {
+    public Order(String customer, double tax, double discount) {
         customerName = customer;
-        taxPercentRate = tax * 100;
+        taxPercentRate = tax;
         isDiscount = true;
-        discountPercent = discount / 100;
+        discountPercent = discount;
+        order = "";
     }
 
     public void addItem(String food, int quantity) {
@@ -34,7 +37,7 @@ public class RestaurantOrder {
         String burger = "burger".toLowerCase();
         String pizza = "pizza".toLowerCase();
         String pasta = "pasta".toLowerCase();
-        String salad = "pasta".toLowerCase();
+        String salad = "salad".toLowerCase();
 
         if (quantity > 0) {
             if (foodItem.equals(burger)) {
@@ -58,31 +61,32 @@ public class RestaurantOrder {
                 subtotal += quantity * PIZZA_COST;
             }
             else {
-                order += "Sorry, " + food + " is not on the menu.";
+                order += "Sorry, " + food + " is not on the menu.\n";
             }
         }
         else {
-            System.out.println("Sorry, " + foodItem + " quantity must be greater than 0.");
+            order += "Sorry, " + foodItem + " quantity must be greater than 0.\n";
         }
     }
 
     public String toString() {
         String str = "";
+        double amountSaved = subtotal * discountPercent;
 
         str += "------ " + customerName + " ------";
         str += "\n";
 
         str += order;
 
-        str += "Subtotal:      $" + subtotal;
+        str += "Subtotal:\t\t$" + subtotal + "\n";
 
         if (isDiscount == true) {
-            double amountSaved = (subtotal * (discountPercent / 100));
-            str += "\tDiscount:    " + discountPercent + "%";
-            str += "\tYou saved:   " + amountSaved;
+            str += "\tDiscount:    " + (discountPercent * 100) + "%\n";
+            str += "\tYou saved:   $" + amountSaved + "\n";
         }
 
-        str += "Tax  (";
+        str += "Tax  (" + taxPercentRate + "%):    " + ((subtotal - amountSaved) * (taxPercentRate)) + "\n";
+        str += "Total:\t\t$" + ((subtotal - amountSaved) + ((subtotal - amountSaved) * (taxPercentRate)));
 
 
         return str;

@@ -1,6 +1,6 @@
 package U3_BooleanAndIfStatements.Labs;
 
-public class RestaurantOrderTester {
+public class OrderTester {
     public static void main(String[] args) {
         // 8% tax rate, no discount
         Order deSteph = new Order("DeSteph's Family", 0.08);
