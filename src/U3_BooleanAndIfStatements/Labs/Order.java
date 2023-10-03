@@ -19,7 +19,6 @@ public class Order {
     private final double SALAD_COST = 6.99;
 
 
-    // no discount
     public Order(String customer, double tax) {
         this.customerName = customer;
         this.tax = tax;
