@@ -65,7 +65,8 @@ public class StringAlgorithms {
         // create a new String (based on phrase), or modify the existing String,
         // that replaces the word "little" with the word "BIG"
 
-
+        String newPhrase1 = phrase.replace("little", "BIG");
+        System.out.println(newPhrase1);
 
 
     }
