@@ -13,60 +13,46 @@ public class CoinPartTwo {
         int numHeads = 0;
         int numTails = 0;
 
-        int headStreak1 = 0;
-        int headStreak2 = 0;
-        int tailStreak = 0;
-/*
-~~Tails
-Head
-Head
-Head
-Head
-Head
-Tail
-Head
-Head
-Head
-Tail
-Tail
-Head
-Head
- */
+        int maxHeadStreak = 0;
+        int currentHeadStreak = 0;
+        int maxTailStreak = 0;
+        int currentTailStreak = 0;
 
-        String coinOutput = "";
-        for (int i=0; i<numPlays; i++) {
-            coinOutput += myCoin.toString();
+
+        for (int i = 0; i < numPlays; i++) {
+
+            System.out.println(myCoin);
+            boolean previousCoin = myCoin.isHeads();
             myCoin.flip();
-        }
-        String currentCoin = "";
-        for (int a=0; a<coinOutput.length(); a+=5){
-            currentCoin = coinOutput.substring(a,a+5);
-            if (currentCoin.equals("Heads")){
 
+            if (myCoin.isHeads() && previousCoin) {
+                currentHeadStreak++;
+            }
+            else if (myCoin.isHeads() && !previousCoin) {
+                currentHeadStreak = 1;
+            }
+
+            if (currentHeadStreak > maxHeadStreak) {
+                maxHeadStreak = currentHeadStreak;
+            }
+
+            if (!myCoin.isHeads() && !previousCoin) {
+                currentTailStreak++;
+            }
+            else if (!myCoin.isHeads() && previousCoin) {
+                currentTailStreak = 1;
+            }
+
+            if (currentTailStreak > maxTailStreak) {
+                maxTailStreak = currentTailStreak;
             }
         }
 
-        System.out.println(coinOutput);
+        System.out.println("Current head streak: " + currentHeadStreak);
+        System.out.println("Maximum head streak: " + maxHeadStreak);
 
-//        for (int i=0; i<numPlays; i++) {
-//            System.out.println(myCoin);
-//            boolean previousCoin = myCoin.isHeads();
-//            myCoin.flip();
-//
-//            if (myCoin.isHeads() && !(previousCoin)) {
-//                headStreak1++;
-//            }
-//
-//            if (myCoin.isHeads() && previousCoin) {
-//                headStreak1++;
-//            }
-////            else {
-////                numTails++;
-////            }
-//        }
-//
-//        System.out.println(headStreak);
-//    }
+        System.out.println("Current tail streak: " + currentTailStreak);
+        System.out.println("Maximum tail streak: " + maxTailStreak);
 
 
 }}
