@@ -20,8 +20,24 @@ public class ChallengingLoops_4_5 {
 //            a--;
 //        }
 
+        everyOtherPyramid("FremdVikings");
+
     }
+
+    // FremdVikings
+    // Fediig
+    // Fdi
+    // Fi
+    // F
+
     public static void everyOtherPyramid(String str) {
-        
+        int n = str.length();
+        String newStr = "";
+        for (int a = 0; a < n / 2; a++) {
+            for (int i = 0; i < n; i += 2) {
+                newStr += str.charAt(i);
+            }
+            System.out.println(newStr);
+        }
     }
 }
