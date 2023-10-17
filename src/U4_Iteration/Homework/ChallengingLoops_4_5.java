@@ -22,6 +22,8 @@ public class ChallengingLoops_4_5 {
 
         everyOtherPyramid("FremdVikings");
 
+        // everyOtherWordBackwards("Boy these loops are tricky!");
+
     }
 
     // FremdVikings
@@ -33,11 +35,21 @@ public class ChallengingLoops_4_5 {
     public static void everyOtherPyramid(String str) {
         int n = str.length();
         String newStr = "";
-        for (int a = 0; a < n / 2; a++) {
-            for (int i = 0; i < n; i += 2) {
+        while (n > 0) {
+            for (int i = 0; i < str.length(); i += 2) {
                 newStr += str.charAt(i);
             }
             System.out.println(newStr);
+        n--;
         }
     }
+
+    public static void everyOtherWordBackwards(String str) {
+        String newStr = "";
+        for (int i = str.length() - 1; i >= 0; i--) {
+            newStr = newStr + str.charAt(i);
+        }
+        System.out.println(newStr);
+    }
+
 }
