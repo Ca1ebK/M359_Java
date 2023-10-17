@@ -20,9 +20,9 @@ public class ChallengingLoops_4_5 {
 //            a--;
 //        }
 
-        everyOtherPyramid("FremdVikings");
+        // everyOtherPyramid("FremdVikings");
 
-        // everyOtherWordBackwards("Boy these loops are tricky!");
+        everyOtherWordBackwards("Boy these loops are tricky!");
 
     }
 
@@ -44,12 +44,46 @@ public class ChallengingLoops_4_5 {
         }
     }
 
+    /*
+    Challenge 4:
+
+    Write the method everyOtherWordBackwards that will print every word with its characters reversed.  The order of the words will remain the same, but each word itself is printed backwards.  To call this method inside public static void main, you will need to make this method static as well.  Use this method header:
+
+    public static void everyOtherWordBackwards(String str)
+
+    For the following method call:
+
+    everyOtherWordBackwards("Boy these loops are tricky!");
+
+
+    You would get this output:
+
+	yoB eseht spool era !ykcirt
+     */
+
     public static void everyOtherWordBackwards(String str) {
-        String newStr = "";
-        for (int i = str.length() - 1; i >= 0; i--) {
-            newStr = newStr + str.charAt(i);
+
+        while (str.length() > 0) {
+            // find a space
+            int loc = str.indexOf(" ");
+            // isolate the word before the space
+            String word = "";
+            if (loc != -1) {
+                word = str.substring(0, loc);    // [0, loc)
+            }
+            else {
+                word = str;
+                str = ""; // end the loop
+            }
+
+            // reverse the letters
+            for (int i = word.length() - 1; i >= 0; i--) {
+                System.out.print(word.charAt(i));     // word.substring(i, i+1)
+            }
+            System.out.print(" ");
+            str = str.substring(loc + 1);   // starts AFTER the space
         }
-        System.out.println(newStr);
+
     }
 
 }
