@@ -2,35 +2,29 @@ package U4_Iteration.Homework;
 
 public class ChallengingLoops_4_5 {
     public static void main(String[] args) {
-//        int n = 5;
-//        while (n > 0) {
-//            for (int i = 1; i <= n; i++) {
-//                System.out.print(i);
-//            }
-//            System.out.println();
-//            n--;
-//        }
+        int n = 5;
+        while (n > 0) {
+            for (int i = 1; i <= n; i++) {
+                System.out.print(i);
+            }
+            System.out.println();
+            n--;
+        }
 
-//        int a = 5;
-//        while (a > 0) {
-//            for (int i = 0; i < a; i++) {
-//                System.out.print(a);
-//            }
-//            System.out.println();
-//            a--;
-//        }
+        int a = 5;
+        while (a > 0) {
+            for (int i = 0; i < a; i++) {
+                System.out.print(a);
+            }
+            System.out.println();
+            a--;
+        }
 
         everyOtherPyramid("FremdVikings");
 
-        // everyOtherWordBackwards("Boy these loops are tricky!");
+        everyOtherWordBackwards("Hello World");
 
     }
-
-    // FremdVikings
-    // Fediig
-    // Fdi
-    // Fi
-    // F
 
     public static void everyOtherPyramid(String str) {
 
@@ -65,7 +59,7 @@ public class ChallengingLoops_4_5 {
             if (loc != -1) {
                 word = str.substring(0, loc);    // [0, loc)
             }
-            else {
+            else { // when it gets to the last word
                 word = str;
                 str = ""; // end the loop
             }
