@@ -20,9 +20,9 @@ public class ChallengingLoops_4_5 {
 //            a--;
 //        }
 
-        // everyOtherPyramid("FremdVikings");
+        everyOtherPyramid("FremdVikings");
 
-        everyOtherWordBackwards("Boy these loops are tricky!");
+        // everyOtherWordBackwards("Boy these loops are tricky!");
 
     }
 
@@ -33,33 +33,27 @@ public class ChallengingLoops_4_5 {
     // F
 
     public static void everyOtherPyramid(String str) {
+
+        System.out.println(str); // print the original string
+        String newStr = ""; // output string
         int n = str.length();
-        String newStr = "";
-        while (n > 0) {
-            for (int i = 0; i < str.length(); i += 2) {
-                newStr += str.charAt(i);
+        while (n > 0) { // keep running until we get to the first character
+
+            for (int i = 0; i < str.length(); i += 2) { // every other letter of str
+                newStr += str.charAt(i); // add the character to newStr
             }
-            System.out.println(newStr);
-        n--;
+            str = newStr; // set str equal to newStr
+            System.out.println(newStr); // print the new output
+            newStr = "";
+
+            n--;
+
+            if (str.length() == 1) {
+                n = 0;
+            }
         }
+
     }
-
-    /*
-    Challenge 4:
-
-    Write the method everyOtherWordBackwards that will print every word with its characters reversed.  The order of the words will remain the same, but each word itself is printed backwards.  To call this method inside public static void main, you will need to make this method static as well.  Use this method header:
-
-    public static void everyOtherWordBackwards(String str)
-
-    For the following method call:
-
-    everyOtherWordBackwards("Boy these loops are tricky!");
-
-
-    You would get this output:
-
-	yoB eseht spool era !ykcirt
-     */
 
     public static void everyOtherWordBackwards(String str) {
 
