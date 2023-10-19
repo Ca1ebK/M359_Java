@@ -18,40 +18,49 @@ public class CoinPartTwo {
         int maxTailStreak = 0;
         int currentTailStreak = 0;
 
+        boolean previousCoin;
+
 
         for (int i = 0; i < numPlays; i++) {
 
-            System.out.println(myCoin);
-            boolean previousCoin = myCoin.isHeads();
-            myCoin.flip();
+            previousCoin = myCoin.isHeads(); // true
+            System.out.println(myCoin); // heads
+            myCoin.flip(); // tails
 
-            if (myCoin.isHeads() && previousCoin) {
-                currentHeadStreak++;
-            }
-            else if (myCoin.isHeads() && !previousCoin) {
-                currentHeadStreak = 1;
-            }
 
-            if (currentHeadStreak > maxHeadStreak) {
-                maxHeadStreak = currentHeadStreak;
+            if (i == 0) {
+                if (previousCoin) {
+                    currentHeadStreak = 1;
+                }
+                else {
+                    currentTailStreak = 1;
+                }
             }
+            else {
+                if (myCoin.isHeads() && previousCoin) { // if it's heads and heads
+                    currentHeadStreak++;
+                }
+                else if (myCoin.isHeads() && !previousCoin) { // if it's heads and tails
+                    currentHeadStreak = 1;
+                }
+                else if (!myCoin.isHeads() && !previousCoin) { // if it's tails and tails
+                    currentTailStreak++;
+                }
+                else { // if it's tails and heads
+                    currentTailStreak = 1;
+                }
 
-            if (!myCoin.isHeads() && !previousCoin) {
-                currentTailStreak++;
-            }
-            else if (!myCoin.isHeads() && previousCoin) {
-                currentTailStreak = 1;
-            }
-
-            if (currentTailStreak > maxTailStreak) {
-                maxTailStreak = currentTailStreak;
+                if (currentHeadStreak > maxHeadStreak) {
+                    maxHeadStreak = currentHeadStreak;
+                }
+                if (currentTailStreak > maxTailStreak) {
+                    maxTailStreak = currentTailStreak;
+                }
             }
         }
 
         System.out.println("Current head streak: " + currentHeadStreak);
         System.out.println("Maximum head streak: " + maxHeadStreak);
-
-        System.out.println("Current tail streak: " + currentTailStreak);
         System.out.println("Maximum tail streak: " + maxTailStreak);
 
 
