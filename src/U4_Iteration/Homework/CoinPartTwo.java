@@ -23,10 +23,9 @@ public class CoinPartTwo {
 
         for (int i = 0; i < numPlays; i++) {
 
-            previousCoin = myCoin.isHeads(); // true
-            System.out.println(myCoin); // heads
-            myCoin.flip(); // tails
-
+            previousCoin = myCoin.isHeads();
+            System.out.println(myCoin);
+            myCoin.flip();
 
             if (i == 0) {
                 if (previousCoin) {
@@ -49,19 +48,19 @@ public class CoinPartTwo {
                 else { // if it's tails and heads
                     currentTailStreak = 1;
                 }
-
-                if (currentHeadStreak > maxHeadStreak) {
-                    maxHeadStreak = currentHeadStreak;
-                }
-                if (currentTailStreak > maxTailStreak) {
-                    maxTailStreak = currentTailStreak;
-                }
+            }
+            if (currentHeadStreak > maxHeadStreak) {
+                maxHeadStreak = currentHeadStreak;
+            }
+            if (currentTailStreak > maxTailStreak) {
+                maxTailStreak = currentTailStreak;
             }
         }
 
         System.out.println("Current head streak: " + currentHeadStreak);
         System.out.println("Maximum head streak: " + maxHeadStreak);
         System.out.println("Maximum tail streak: " + maxTailStreak);
+
 
 
 }}
