@@ -10,20 +10,15 @@ public class CoinPartTwo {
         int numPlays = input.nextInt();
         Coin myCoin = new Coin();
 
-        int numHeads = 0;
-        int numTails = 0;
-
         int maxHeadStreak = 0;
         int currentHeadStreak = 0;
         int maxTailStreak = 0;
         int currentTailStreak = 0;
 
-        boolean previousCoin;
-
-
         for (int i = 0; i < numPlays; i++) {
 
             System.out.println(myCoin);
+
             if (myCoin.isHeads()) {
                 currentHeadStreak++;
                 currentTailStreak = 0;
@@ -38,6 +33,7 @@ public class CoinPartTwo {
             if (currentTailStreak > maxTailStreak) {
                 maxTailStreak = currentTailStreak;
             }
+
             myCoin.flip();
 
         }
