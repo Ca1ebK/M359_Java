@@ -18,31 +18,33 @@ public class Test {
 
     public static String notReplace(String str) {
 
-        String newStr = "";
+        String result = "";
+        int len = str.length();
 
-        for (int i = 0; i < str.length(); i++) {
-//            char myChar = str.charAt(i);
-//
-//            if (Character.isLetter(myChar)) {
-//                newStr += "True";
-//            }
-            if (str.substring(0, i).equals("is")) {
-                newStr += "True";
+        for (int i = 0; i < len; i++) {
+
+            // adding anything that doesn't qualify
+            if (i > 0 && Character.isLetter(str.charAt(i-1)) || i+2 < len && Character.isLetter(str.charAt(i+2))) {
+                result += str.charAt(i);
             }
-            for (int j = i + 1; j < str.length() - i; j++) {
-                char myChar = str.charAt(j);
-                if (Character.isLetter(myChar)) {
-                    newStr += "False";
-                }
+            else if (i < len && str.substring(i, i+2).equals("is")) {
+                result += "is not";
+                i++;
             }
+            else {
+                result += str.charAt(i);
+            }
+
         }
 
-        return newStr;
+        return result;
+
     }
+
 
 
     public static void main(String[] args) {
         // System.out.println(mirrorEnds("abXYZba"));
-        System.out.println(notReplace("isis"));
+        System.out.println(notReplace("is test"));
     }
 }
