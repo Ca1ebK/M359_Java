@@ -4,11 +4,13 @@ public class MarvelCharacter {
     private String name;
     private Power specialPower;
     private boolean isHero;
+    private int health;
 
     public MarvelCharacter(String name, Power specialPower, boolean isHero) {
         this.name = name;
         this.specialPower = specialPower;
         this.isHero = isHero;
+        this.health = 100;
     }
 
     // you MUST use this method header for this method to be
@@ -47,5 +49,13 @@ public class MarvelCharacter {
 
     public void setHero(boolean hero) {
         isHero = hero;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
     }
 }
