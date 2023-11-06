@@ -5,10 +5,13 @@ public class Car {
     private String model = "";
     private String color = "";
 
+    public static int numCars = 0;
+
     public Car(Engine engine, String model, String color) {
         this.engine = engine;
         this.model = model;
         this.color = color;
+        numCars++;
     }
 
     @Override
@@ -41,4 +44,7 @@ public class Car {
     public void setColor(String color) {
         this.color = color;
     }
+
+
+
 }
