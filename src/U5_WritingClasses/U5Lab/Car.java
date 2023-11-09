@@ -14,25 +14,44 @@ public class Car {
         numCars++;
     }
 
-    @Override
+    /**
+     * When a car object is printed, format it nicely
+     * @return return the engine, model, and color
+     */
     public String toString() {
         return engine
                 + "Model: " + model + "\n"
                 + "Color: " + color + "\n";
     }
 
+    /**
+     * get method for the engine
+     * @return the car's engine
+     */
     public Engine getEngine() {
         return engine;
     }
 
+    /**
+     * set method for the engine
+     * @param engine the engine for the car
+     */
     public void setEngine(Engine engine) {
         this.engine = engine;
     }
 
+    /**
+     * get method for the car's model
+     * @return the car's model
+     */
     public String getModel() {
         return model;
     }
 
+    /**
+     * set method for the engine
+     * @param model the car's model
+     */
     public void setModel(String model) {
         this.model = model;
     }
