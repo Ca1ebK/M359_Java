@@ -1,5 +1,7 @@
 package U5_WritingClasses.U5Lab;
 
+import static U5_WritingClasses.U5Lab.Car.race;
+
 public class CarTester {
 
     public static void main(String[] args) {
@@ -12,29 +14,6 @@ public class CarTester {
         Track Indy1000 = new Track("Racetrack", 1.25, 1000);
 
         race(lambo, bugatti, Indy1000);
-    }
-
-    /**
-     * This method simulates a race between the two cars and prints the winner
-     * @param car1 a car that is going to race
-     * @param car2 the other car that is going to race
-     * @param track the track of the race
-     */
-    public static void race(Car car1, Car car2, Track track) {
-        int car1d=0;
-        int car2d=0;
-        while(car1d<track.getDistance() && car2d< track.getDistance()){
-            car1d+=track.getFriction()*(car1.getEngine().getMaxspd()*Math.random()+1);
-            System.out.println(car1.getModel() + " distance: " + car1d);
-            car2d+=track.getFriction()*(car2.getEngine().getMaxspd()*Math.random()+1);
-            System.out.println(car2.getModel() + " distance: " + car2d);
-        }
-        if(car1d>car2d){
-            System.out.println("The winner is: " + car1.getModel());
-        }
-        else {
-            System.out.println("The winner is: " + car2.getModel());
-        }
     }
 
     /**
