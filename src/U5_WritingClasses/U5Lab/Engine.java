@@ -1,3 +1,12 @@
+/*
+Caleb Kang, Pranaav Senthilkumar
+Mrs. Denna
+8th period
+
+Purpose: to create a car's engine with a max speed and engine type
+
+ */
+
 package U5_WritingClasses.U5Lab;
 
 public class Engine {
@@ -8,7 +17,10 @@ public class Engine {
         maxspd = m;
     }
 
-    @Override
+    /**
+     * When an engine object is printed, format it nicely
+     * @return return the max speed
+     */
     public String toString() {
         return "ENGINE:\n" +
                 "\tMax speed: " + maxspd + " mph\n" +

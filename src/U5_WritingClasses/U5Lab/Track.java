@@ -1,3 +1,12 @@
+/*
+Caleb Kang, Pranaav Senthilkumar
+Mrs. Denna
+8th period
+
+Purpose: to create a track object with a type, friction, and distance
+
+ */
+
 package U5_WritingClasses.U5Lab;
 
 public class Track {
