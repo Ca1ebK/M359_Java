@@ -13,7 +13,7 @@ public class Track {
     private String type;
     private double friction;
     private int distance;
-    public static int numTracks = 0;
+    private static int numTracks = 0;
     public Track(String t, double f, int d){
         type=t;
         friction=f;
@@ -43,5 +43,9 @@ public class Track {
 
     public void setDistance(int distance) {
         this.distance = distance;
+    }
+
+    public static int getNumTracks() {
+        return numTracks;
     }
 }

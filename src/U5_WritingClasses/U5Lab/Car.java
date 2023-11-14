@@ -14,7 +14,7 @@ public class Car {
     private String model = "";
     private String color = "";
 
-    public static int numCars = 0;
+    private static int numCars = 0;
 
     public Car(Engine engine, String model, String color) {
         this.engine = engine;
@@ -51,7 +51,7 @@ public class Car {
     public void setColor(String color) {
         this.color = color;
     }
-
-
-
+    public static int getNumCars() {
+        return numCars;
+    }
 }

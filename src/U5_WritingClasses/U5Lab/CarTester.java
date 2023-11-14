@@ -15,12 +15,24 @@ public class CarTester {
         Engine v12 = new Engine(221, "v12");
         Car lambo = new Car(v12, "Aventador", "Yellow");
 
-        Engine w16 = new Engine(221, "w16");
+        Engine w16 = new Engine(230, "w16");
         Car bugatti = new Car(w16, "Veyron", "Black");
 
         Track Indy1000 = new Track("Racetrack", 1.25, 1000);
+        System.out.println("There are "+Track.getNumTracks()+ " tracks available to race on.");
 
         race(lambo, bugatti, Indy1000);
+
+        upgrade(lambo);
+        upgrade(lambo);
+        upgrade(lambo);
+        upgrade(lambo);
+        upgrade(lambo);
+
+        race(lambo, bugatti, Indy1000);
+        Track Grnd = new Track("Dirt", 0.5, 1000);
+        System.out.println("There are "+Track.getNumTracks()+ " tracks available to race on.");
+
     }
 
     /**
@@ -32,6 +44,8 @@ public class CarTester {
     public static void race(Car car1, Car car2, Track track) {
         int car1d=0;
         int car2d=0;
+
+
         while(car1d<track.getDistance() && car2d< track.getDistance()){
             car1d+=track.getFriction()*(car1.getEngine().getMaxspd()*Math.random()+1);
             System.out.println(car1.getModel() + " distance: " + car1d);
