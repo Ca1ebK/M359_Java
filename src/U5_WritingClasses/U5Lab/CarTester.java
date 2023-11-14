@@ -72,7 +72,8 @@ public class CarTester {
 
         if (num == 0 && maxSpeed >= 6) {
             car1.getEngine().setMaxspd(maxSpeed-6);
-            System.out.println("The car's engine breaks. It won't be as fast anymore. \nPerhaps you shouldn't have tried your luck.");
+            System.out.println("The car's engine breaks. It won't be as fast anymore." +
+                    "\nPerhaps you shouldn't have tried your luck.");
         }
         else {
             car1.getEngine().setMaxspd(maxSpeed + num);
