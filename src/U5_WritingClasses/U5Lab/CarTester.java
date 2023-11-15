@@ -36,7 +36,7 @@ public class CarTester {
     }
 
     /**
-     * This method simulates a race between the two cars and prints the winner
+     * Description: This method simulates a race between the two cars and prints the winner
      * @param car1 a car that is going to race
      * @param car2 the other car that is going to race
      * @param track the track of the race
@@ -61,7 +61,7 @@ public class CarTester {
     }
 
     /**
-     * This method changes the speed of the given car.
+     * Description: This method changes the speed of the given car.
      * @param car1 The car that is being upgraded
      */
 

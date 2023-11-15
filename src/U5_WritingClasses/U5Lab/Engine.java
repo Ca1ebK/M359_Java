@@ -18,7 +18,7 @@ public class Engine {
     }
 
     /**
-     * When an engine object is printed, format it nicely
+     * Description: When an engine object is printed, format it nicely
      * @return return the max speed
      */
     public String toString() {

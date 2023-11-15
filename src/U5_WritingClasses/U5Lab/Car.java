@@ -24,7 +24,7 @@ public class Car {
     }
 
     /**
-     * When a car object is printed, format it nicely
+     * Description: When a car object is printed, format it nicely
      * @return return the engine, model, and color
      */
     public String toString() {
