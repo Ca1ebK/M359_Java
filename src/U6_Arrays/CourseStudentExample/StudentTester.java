@@ -87,7 +87,7 @@ public class StudentTester {
 
             Course[] oneSchedule = new Course[8];
             // Use a loop to read in all 8 sets of Course data
-            for (int i = 0; i < schedule.length; i++) {
+            for (int i = 0; i < oneSchedule.length; i++) {
                 String myTeacher = allSchedules.nextLine();
                 String myClass = allSchedules.nextLine();
                 String myGrade = allSchedules.nextLine();
