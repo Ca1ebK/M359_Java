@@ -110,9 +110,16 @@ public class StudentTester {
 
         }
 
-        for (int i = 0; i < allStudents.length; i++) {
-            System.out.println(allStudents[i]);
-        }
+        printAllStudentSchedules(allStudents);
+
+
 
     }
+
+    public static void printAllStudentSchedules(Student[] stuArr) {
+        for (Student s : stuArr) {
+            if (s != null) System.out.println(s);
+        }
+    }
+
 }
