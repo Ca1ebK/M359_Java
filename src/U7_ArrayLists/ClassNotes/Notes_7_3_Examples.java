@@ -1,5 +1,6 @@
 package U7_ArrayLists.ClassNotes;
 
+import java.sql.Array;
 import java.util.ArrayList;
 
 public class Notes_7_3_Examples {
@@ -36,6 +37,8 @@ public class Notes_7_3_Examples {
         /** Part II:  Using loops to remove a value **/
         // Create two ArrayLists of Integer values called list1 and list2
 
+        ArrayList<Integer> list1 = new ArrayList<>();
+        ArrayList<Integer> list2 = new ArrayList<>();
 
         // Use a for loop to fill both list1 and list2 with values 1-20
 
@@ -98,15 +101,24 @@ public class Notes_7_3_Examples {
      * The ArrayList will be traversed from beginning to end.
      * @param vals ArrayList to remove values from
      */
-//    public static void removeEvensForward(ArrayList<Integer> vals) {
-//
-//    }
+    public static void removeEvensForward(ArrayList<Integer> vals) {
+        // You CANNOT remove elements with a for each loop
+        for (int i = 0; i < vals.size(); i++) {
+            if (vals.get(i) % 2 == 0) {
+                vals.remove(i);
+            }
+        }
+    }
     /**
      * This method will remove all even Integer values in the ArrayList
      * The ArrayList will be traversed from end to beginning
      * @param vals ArrayList to remove values from
      */
-//    public static void removeEvensBackward(ArrayList<Integer> vals) {
-//
-//    }
+    public static void removeEvensBackward(ArrayList<Integer> vals) {
+        for (int i = vals.size() - 1; i >= 0; i--) {
+            if (vals.get(i) % 2 == 0) {
+                vals.remove(i);
+            }
+        }
+    }
 }
