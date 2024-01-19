@@ -1,0 +1,36 @@
+public void addNewSitters(String[] names) {
+    for (String s : names) {
+        boolean isFound = false;
+        for (Babysitter b : sitterList) {
+            if (s.equals(b.getName())) {
+                isFound = true;
+            }
+        }
+        if (!isFound) {
+            Babysitter newSitter = new Babysitter(s, 0);
+            sitterList.add(newSitter);
+        }
+    }
+}
+
+public ArrayList<Babysitter> affordableSitters(double budget, int numChildren, int hours) {
+    ArrayList<Babysitter> newList = new Arraylist<>;
+    for (Babysitter b : sitterList) {
+        int totalCharge = 0;
+        int exp = b.getYears();
+        if (exp == 0) {
+            totalCharge = 2 * numChildren * hours;
+        }
+        else if (exp <= 4) {
+            totalCharge = (2 + exp) * numChildren * hours
+        }
+        else {
+            totalCharge = 6 * numChildren * hours;
+        }
+
+        if (totalCharge <= budget) {
+            newList.add(b);
+        }
+    }
+    return newList;
+}
