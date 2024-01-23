@@ -29,18 +29,14 @@ public class Store {
      */
 
     public boolean updateStock(Item newItem) {
-        boolean isFound = false;
         for (Item i : myItems) {
             if (i.equals(newItem)) {
                 i.setQuantity(i.getQuantity() + newItem.getQuantity());
-                isFound = true;
+                return true;
             }
         }
-        if (!isFound) {
-            myItems.add(newItem);
-        }
-
-        return isFound;
+        myItems.add(newItem);
+        return false;
     }
 
     /**
