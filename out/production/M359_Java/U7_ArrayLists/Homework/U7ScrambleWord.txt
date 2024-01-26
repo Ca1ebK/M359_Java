@@ -9,7 +9,26 @@ public static String scrambleWord(String word) {
         }
         else {
             str += word.substring(i, i+1);
+            if (i == word.length() - 2) {
+                str += word.substring(i+1);
+            }
         }
     }
     return str;
 }
+
+loop through every letter in the word except for the last
+if a letter starts with "a" and is followed by a letter other than "a"
+    add the second letter to the string to be returned
+    ...then add the first letter to the string to be returned
+    increment index by one so that we can skip over the next letter
+else:
+    add the letter
+    if the index is at length - 2, add the last letter
+---
+loop through every letter in the word up to the last
+temp variable for holding a swapped index
+if a letter starts with "a" and is followed by a letter other than "a"
+
+
+while an index is less than the length of the word

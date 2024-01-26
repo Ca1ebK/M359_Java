@@ -26,5 +26,11 @@ public class Notes_7_6_Selection_Sort {
             nums[i] = nums[min];
             nums[min] = placeholder;
         }
+
+        for (int i : nums) {
+            System.out.println(i);
+        }
+
     }
+
 }
