@@ -1,34 +1,28 @@
-
 public static String scrambleWord(String word) {
-    String str = "";
-    for (int i = 0; i < word.length() - 1; i++) {
-        if (word.substring(i, i+1).equals("A") && !word.substring(i+1, i+2).equals("A")) {
-            str += word.substring(i+1, i+2);
-            str += word.substring(i, i+1);
-            i++;
-        }
-        else {
-            str += word.substring(i, i+1);
-            if (i == word.length() - 2) {
-                str += word.substring(i+1);
+        String str = "";
+        for (int i = 0; i < word.length() - 1; i++) {
+            if (word.substring(i, i+1).equals("A") && !word.substring(i+1, i+2).equals("A")) {
+                str += word.substring(i+1, i+2);
+                str += word.substring(i, i+1);
+                i++;
+            }
+            else {
+                str += word.substring(i, i+1);
             }
         }
+
+        return str;
     }
-    return str;
+
+public static void scrambleOrRemove(List<String> wordList) {
+
+    for (int i = wordList.size() - 1; i >= 0; i--) {
+        if (scrambleWord(wordList.get(i)).equals("")) {
+            wordList.remove(i);
+        }
+        else {
+            wordList.get(i) = scrambleWord(wordList.get(i));
+        }
+    }
+
 }
-
-loop through every letter in the word except for the last
-if a letter starts with "a" and is followed by a letter other than "a"
-    add the second letter to the string to be returned
-    ...then add the first letter to the string to be returned
-    increment index by one so that we can skip over the next letter
-else:
-    add the letter
-    if the index is at length - 2, add the last letter
----
-loop through every letter in the word up to the last
-temp variable for holding a swapped index
-if a letter starts with "a" and is followed by a letter other than "a"
-
-
-while an index is less than the length of the word
