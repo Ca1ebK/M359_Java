@@ -1,0 +1,11 @@
+// instance variable
+
+private Shoe[][] shoeRack;
+
+// constructor
+
+public Shoe(int rows, int columns) {
+    shoeRack = new Shoe[rows][columns];
+}
+
+// findCheapest method
