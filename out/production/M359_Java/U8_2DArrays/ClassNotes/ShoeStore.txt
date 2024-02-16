@@ -1,0 +1,34 @@
+public class ShoeStore {
+    private Shoe[][] shoeRack;
+
+    public Shoe(int rows, int columns) {
+        shoeRack = new Shoe[rows][columns];
+    }
+
+    public Shoe findCheapest(){
+        double cheapestPrice = shoeRack[0][0];
+        Shoe cheapestShoe;
+        for (int i = 0; i < shoeRack.length; i++) {
+            for (int j = 0; j < shoeRack[0].length; j++) {
+                if (shoeRack[i][j].getPrice() < cheapestPrice) {
+                    cheapestShoe = shoeRack[i][j];
+                    cheapestPrice = shoeRack[i][j].getPrice();
+                }
+            }
+        }
+        return cheapestShoe;
+    }
+
+    public ArrayList<Shoe> possibleShoes(double maxPrice, int size) {
+        ArrayList<Shoe> shoeList = new ArrayList<>();
+        for (Shoe[] row : shoeList) {
+            for (Shoe s : row) {
+                if (s.getPrice() <= maxPrice && s.getSize() == size) {
+                    shoeList.add(s);
+                }
+            }
+        }
+        return shoeList;
+    }
+
+}
