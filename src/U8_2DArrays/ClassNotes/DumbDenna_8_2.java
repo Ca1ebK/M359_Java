@@ -14,7 +14,7 @@ public class DumbDenna_8_2 {
 
         for (int[] row: favNums) {
             for (int col: row) {
-                System.out.println(col + " ");
+                System.out.print(col + " ");
             }
             System.out.println();
         }
@@ -38,9 +38,6 @@ public class DumbDenna_8_2 {
             for (String s: row) {
                 if (s.equals(word)) {
                     return true;
-                }
-                else {
-                    return false;
                 }
             }
         }
