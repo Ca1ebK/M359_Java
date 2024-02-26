@@ -15,12 +15,12 @@ public class TeamAthlete extends Athlete {
         return teamName;
     }
 
-    public String getSport() {
-        return sport;
-    }
-
     public void setTeamName(String teamName) {
         this.teamName = teamName;
+    }
+
+    public String getSport() {
+        return sport;
     }
 
     public void setSport(String sport) {
