@@ -10,15 +10,15 @@ public class ShapeTester {
         System.out.println(shape + "\n");
 
         System.out.println(circle);
-//        System.out.println("Area: " + circle.findArea() + "\n");
-//
+        System.out.println("Area: " + circle.findArea() + "\n");
+
         System.out.println(rectangle);
-//        System.out.println("Area: " + rectangle.findArea() + "\n");
-//
+        System.out.println("Area: " + rectangle.findArea() + "\n");
+
         System.out.println(square);
-//        System.out.println("Area: " + square.findArea() + "\n");
-//
-//        square.scaleSize(0.5);
-//        System.out.println(square);
+        System.out.println("Area: " + square.findArea() + "\n");
+
+        square.scaleSize(0.5);
+        System.out.println(square);
     }
 }

@@ -14,6 +14,9 @@ public class Shape {
         str += "A " + color + " " + name;
         return str;
     }
+
+
+
     public String getColor() {
         return color;
     }

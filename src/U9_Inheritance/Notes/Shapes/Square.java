@@ -9,4 +9,10 @@ public class Square extends Rectangle {
         str += "A " + getColor() + " Square with side: " + getLength();
         return str;
     }
+
+    // You don't need this method! Nor do you need the scale method for this class since
+    // Java references the methods from the rectangle class
+//    public double findArea() {
+//        return getLength() * getLength();
+//    }
 }

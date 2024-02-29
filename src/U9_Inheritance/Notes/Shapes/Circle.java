@@ -9,8 +9,16 @@ public class Circle extends Shape {
 
     public String toString() {
         String str = "";
-        str += "A " + getColor() + " Circle with radius: " + getRadius();
+        str += "A " + getColor() + " Circle with radius: " + getRadius()    ;
         return str;
+    }
+
+    public double findArea() {
+        return Math.PI * radius * radius;
+    }
+
+    public void scaleSize(double scale) {
+        radius *= scale;
     }
 
     public double getRadius() {

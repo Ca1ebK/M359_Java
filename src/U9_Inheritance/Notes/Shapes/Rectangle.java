@@ -15,6 +15,15 @@ public class Rectangle extends Shape {
         return str;
     }
 
+    public double findArea() {
+        return length * width;
+    }
+
+    public void scaleSize(double scale) {
+        length *= scale;
+        width *= scale;
+    }
+
     public double getLength() {
         return length;
     }
