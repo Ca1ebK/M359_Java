@@ -11,7 +11,7 @@ public class Rectangle extends Shape {
 
     public String toString() {
         String str = "";
-        str += "A " + getColor() + " Rectangle with length: " + getLength() + " and width: " + getWidth();
+        str += "A " + getColor() + " " + getName() + " with length: " + getLength() + " and width: " + getWidth();
         return str;
     }
 

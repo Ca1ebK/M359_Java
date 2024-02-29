@@ -9,7 +9,7 @@ public class Circle extends Shape {
 
     public String toString() {
         String str = "";
-        str += "A " + getColor() + " Circle with radius: " + getRadius();
+        str += "A " + getColor() + " " + getName() + " with radius: " + getRadius();
         return str;
     }
 
