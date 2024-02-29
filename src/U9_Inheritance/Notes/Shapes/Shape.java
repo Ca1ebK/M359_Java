@@ -15,8 +15,6 @@ public class Shape {
         return str;
     }
 
-
-
     public String getColor() {
         return color;
     }
