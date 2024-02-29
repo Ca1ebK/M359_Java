@@ -6,7 +6,7 @@ public class Square extends Rectangle {
     }
     public String toString() {
         String str = "";
-        str += "A " + getColor() + " Square with side: " + getLength();
+        str += "A " + getColor() + " " + getName() + " with side: " + getLength();
         return str;
     }
 
