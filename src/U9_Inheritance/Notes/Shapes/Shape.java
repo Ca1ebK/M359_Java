@@ -11,7 +11,7 @@ public class Shape {
 
     public String toString() {
         String str = "";
-        str += "A " + color + " " + name;
+        str += "A " + color + " " + " Shape";
         return str;
     }
 
@@ -20,5 +20,13 @@ public class Shape {
     }
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 }
