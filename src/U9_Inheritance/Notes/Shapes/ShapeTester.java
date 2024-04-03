@@ -24,7 +24,7 @@ public class ShapeTester {
         Shape[] shapes = {shape, circle, rectangle, square};
         for (Shape s : shapes) {
             System.out.println(s);
-            s.findArea();
+//            s.findArea();
         }
 
     }
